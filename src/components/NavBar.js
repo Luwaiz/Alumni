@@ -5,11 +5,14 @@ const Navbar = () => {
   return (
     <nav style={styles.navbar}>
       <ul style={styles.navList}>
+        
         <li><Link to="/" style={styles.link}>Home</Link></li>
         <li><Link to="/my-memories" style={styles.link}>My Memories</Link></li>
         <li><Link to="/alumni" style={styles.link}>Alumni</Link></li>
         <li><Link to="/my-profile" style={styles.link}>My Profile</Link></li>
         <li><Link to="/signup" style={styles.link}>Sign Up</Link></li>
+        <li><Link to="/login" style={styles.link}>Log in</Link></li>
+
       </ul>
     </nav>
   );

@@ -1,0 +1,42 @@
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.icon1{
+    position: relative;
+    top: 10px;
+    left: -500px;
+}
+
+.con2{
+    border: solid 1px black;
+    width: 600px;
+    margin-top: -30px;
+    height: 550px;
+    background-color: #DEC29B;
+}
+
+.icon2{
+    margin-left: -490px;
+    margin-top: 15px;
+}
+
+.con2 p{
+    margin-top: -30px;
+    margin-left: -210px;
+    font-weight: bolder;
+    color: #692800;
+}
+
+.con3{
+    border: 1px solid black;
+    height: 400px;
+    margin-top: 25px;
+}
+
+.icon3{
+    margin-top: 20px;
+    margin-left: -500px;
+    margin-bottom: auto;
+}

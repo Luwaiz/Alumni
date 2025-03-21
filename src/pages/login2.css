@@ -1,0 +1,30 @@
+.signup-box {
+    margin-top: -150px;
+    background-color: #d9b89c;
+    padding: 40px;
+    border-radius: 40px;
+    text-align: center;
+}
+  
+  .signup-text {
+    font-size: 24px;
+    color: #692800;
+    font-weight: bold;
+  }
+  
+  .signup-button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    background-color: #692800;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    width: 150px;
+  }
+  
+  .signup-button:hover {
+    background-color: #4a1f00;
+  } 

@@ -1,0 +1,77 @@
+/* General Container */
+.container {
+    background-color: #f5e3c8;
+    min-height: 100vh;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  /* Profile Section */
+  .profiles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 70px;
+  }
+  
+  .profile-card {
+    background-color: #dec29b;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    width: 700px;
+    margin-bottom: 20px;
+  }
+  
+  .profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+  
+  
+  
+  .profile-info p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #692800;
+    border: 2px solid black;
+    border-radius: 4px;
+    width: 200px;
+  }
+  
+  .profile-info strong {
+    font-weight: bold;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .navbar ul {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .profiles {
+      width: 100%;
+    }
+  
+    .profile-card {
+      flex-direction: column;
+      text-align: center;
+      width: 90%;
+    }
+  
+    .profile-pic {
+      width: 120px;
+      height: 120px;
+    }
+  }
+  
