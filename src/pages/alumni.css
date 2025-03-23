@@ -1,77 +1,106 @@
-/* General Container */
+/* General Styles */
 .container {
-    background-color: #f5e3c8;
-    min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.heading h1 {
+  font-size: 30px;
+  font-weight: 600;
+  color: #692800;
+}
+
+/* Profile Section */
+.all {
+  background-color: #DEC29B;
+  width: 100%;
+  max-width: 900px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+  .all {
+    background-color: #DEC29B;
+    width: 100%;
+    max-width: 900px;
     padding: 20px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
-  
-  /* Profile Section */
-  .profiles {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 40px;
-  }
-  
-  .profile-card {
-    background-color: #dec29b;
     border-radius: 10px;
-    padding: 20px;
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    width: 700px;
-    margin-bottom: 20px;
-  }
-  
-  .profile-pic {
-    width: 150px;
-    height: 150px;
-    border-radius: 10px;
-    object-fit: cover;
-  }
-  
-  
-  
-  .profile-info p {
-    margin: 5px 0;
-    font-size: 16px;
-    color: #692800;
-    border: 2px solid black;
-    border-radius: 4px;
-    width: 200px;
-  }
-  
-  .profile-info strong {
-    font-weight: bold;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .navbar {
-      flex-direction: column;
-      text-align: center;
-    }
-  
-    .navbar ul {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+/* Input Container */
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Space between alumni cards */
+  width: 100%;
+  background-color: #F4DCBB;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+/* Alumni Card */
+.alumnus-card {
+  background-color: #F4DCBB;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Two Divs in a Row */
+.input-group1,
+.input-group2,
+.input-group3 {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 10px;
+}
+
+.input-box {
+  border-radius: 10px;
+  background-color: #F4DCBB;
+  padding: 10px;
+  width: 100%;
+  text-align: left;
+  font-weight: 600;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #692800;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .input-group1,
+  .input-group2,
+  .input-group3 {
       flex-direction: column;
       gap: 10px;
-    }
-  
-    .profiles {
-      width: 100%;
-    }
-  
-    .profile-card {
-      flex-direction: column;
-      text-align: center;
-      width: 90%;
-    }
-  
-    .profile-pic {
-      width: 120px;
-      height: 120px;
-    }
   }
-  
+
+  .input-box {
+      width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .heading h1 {
+      font-size: 24px;
+  }
+
+  .all {
+      padding: 15px;
+  }
+}
+
+/* Inputs Section */
+.inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

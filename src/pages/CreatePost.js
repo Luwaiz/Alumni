@@ -1,44 +1,35 @@
-// import React from 'react';
-// import "./alumni1.css";
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faSquarePlus } from '@fortawesome/free-solid-svg-icons';
-
-// const alumni1 = () => {
-//   return (
-//       <div>
-//           <FontAwesomeIcon icon={faSquarePlus} color="#692800" size='2x' className='icon1'/>
-//       </div>
-//   );
-// };
-
-// export default alumni1;
-
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const CreatePost = () => {
   const [image, setImage] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+    setError(null);
 
     const formData = new FormData();
     formData.append("image", image);
-    formData.append("ownerName", "John Doe"); // Replace with actual user name
-    formData.append("ownerId", "12345"); // Replace with actual user ID
 
     try {
+      const token = localStorage.getItem("token"); // Retrieve the token
       const response = await axios.post("https://alumni-backend-6fcj.onrender.com/api/posts/create", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
+          Authorization: `Bearer ${token}`, // Include the token in the header
         },
       });
       console.log("Post created:", response.data);
       setLoading(false);
+      navigate("/my-memories"); // Redirect to the feed after posting
     } catch (error) {
       console.error("Error creating post:", error);
+      setError(error.response ? error.response.data.message : error.message);
       setLoading(false);
     }
   };
@@ -46,6 +37,7 @@ const CreatePost = () => {
   return (
     <div>
       <h2>Create a Post</h2>
+      {error && <p style={{ color: "red" }}></p>}
       <form onSubmit={handleSubmit}>
         <input type="file" onChange={(e) => setImage(e.target.files[0])} required />
         <button type="submit" disabled={loading}>
