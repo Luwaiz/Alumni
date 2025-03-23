@@ -10,26 +10,31 @@ const Profile = () => {
 
       <div className="all">
         <div className="input-container">
-          <input type="text" placeholder="Best Friend" className="input-main" />
-
-          <div className="input-group">
-            <input type="text" placeholder="Best Friend" />
-            <input type="text" placeholder="Best Friend" />
+          <div className="input-main">
+            Best-Friend
+            {/* Main Input (if needed, otherwise remove) */}
           </div>
 
-          <div className="input-group">
-            <input type="text" placeholder="Best Friend" />
-            <input type="text" placeholder="Best Friend" />
+          <div className="input-group1">
+            <div className="input-box">Best Friend</div>
+            <div className="input-box">Best Friend</div>
           </div>
 
-          <div className="input-group">
-            <input type="text" placeholder="Best Friend" />
-            <input type="text" placeholder="Best Friend" />
+          <div className="input-group2">
+            <div className="input-box">Best Friend</div>
+            <div className="input-box">Best Friend</div>
           </div>
 
-          <div className="input-group">
-            <input type="text" placeholder="Best Friend" />
-            <input type="text" placeholder="Best Friend" />
+          <div className="input-group3">
+            <div className="input-box">Best Friend</div>
+            <div className="input-box">Best Friend</div>
+          </div>
+
+          <div className="inputs">
+            <div className="input-box">Best Friend</div>
+            <div className="input-box">Best Friend</div>
+            <div className="input-box">Best Friend</div>
+            <div className="input-box">Best Friend</div>
           </div>
         </div>
       </div>
