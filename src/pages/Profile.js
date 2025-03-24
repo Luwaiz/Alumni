@@ -20,6 +20,7 @@ const Profile = () => {
             Authorization: `Bearer ${localStorage.getItem("token")}`, // Include the token for authentication
           },
         });
+        console.log("wease",response.data)
         setUser(response.data); // Set the user data
         setLoading(false); // Set loading to false
       } catch (error) {
@@ -31,6 +32,7 @@ const Profile = () => {
 
     fetchUserProfile();
   }, [matricNo]);
+
 
   // Display loading state
   if (loading) {

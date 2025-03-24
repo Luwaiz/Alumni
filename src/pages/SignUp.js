@@ -19,6 +19,7 @@ const SignupForm = () => {
     bestFriend: "",
     bestMoment: "",
     miss: "",
+    profilePicture: null, // Store the selected file
   });
 
   const handleChange = (e) => {
@@ -27,6 +28,10 @@ const SignupForm = () => {
       ...formData,
       [name]: value,
     });
+  };
+
+  const handleFileChange = (e) => {
+    setFormData({ ...formData, profilePicture: e.target.files[0] });
   };
 
   const handleSubmit = async (e) => {
@@ -67,6 +72,7 @@ const SignupForm = () => {
           <input type="text" name="bestFriend" placeholder="Best Friend" value={formData.bestFriend} onChange={handleChange} />
           <input type="text" name="bestMoment" placeholder="Best Moment" value={formData.bestMoment} onChange={handleChange} />
           <textarea name="miss" placeholder="What Will You Miss" value={formData.miss} onChange={handleChange}></textarea>
+          <input type="file" name="profilePicture" onChange={handleFileChange} accept="image/*" required />
           <button type="submit">Sign Up</button>
         </form>
       </div>
