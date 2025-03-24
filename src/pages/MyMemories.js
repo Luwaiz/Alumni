@@ -53,32 +53,39 @@ const Feed = () => {
 	}
 
 	return (
-		<div>
-			<h2>Memories Feed</h2>
+		<div className="cont">
+			<div className="heading">
+				<h1>My Profile</h1>
+			</div>
 			{posts.map((post) => (
 				<div key={post._id} className="post-card">
+					<p className="username">{post.ownerName}</p>
 					<img
 						src={`https://alumni-backend-6fcj.onrender.com${post.imageUrl}`}
 						alt="Post"
 						style={{ width: "100%", maxWidth: "500px" }}
 					/>
-					<p>Posted by: {post.ownerName}</p>
-					<p>Likes: {post.likes}</p>
-					<button
-						onClick={() => handleLike(post._id)}
-						style={{
-							background: "none",
-							border: "none",
-							cursor: "pointer",
-							fontSize: "50px",
-						}}
-					>
-						{post.isLiked ? "❤️" : "🤍"}{" "}
-						{/* Filled heart if liked, empty heart if not */}
-					</button>
+					<div className="bottom">
+						<button
+							onClick={() => handleLike(post._id)}
+							style={{
+								background: "none",
+								border: "none",
+								cursor: "pointer",
+								fontSize: "40px",
+								marginTop: "-20px",
+								marginLeft: "-40px",
+								color: "#692800",
+								fontWeight: "bold",
+							}}
+						>
+							{post.isLiked ? "❤" : "🤍"}{" "}
+							{/* Filled heart if liked, empty heart if not */}
+						</button>
+						<p>Likes: {post.likes}</p>
+					</div>
 				</div>
 			))}
-
 			{/* Floating Plus Button */}
 			<button
 				className="floating-button"

@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { useNavigate } from "react-router-dom";
 import './SignUp.css';
 import apiEndpoints from "../components/API";
 
 const SignupForm = () => {
-  const navigate = useNavigate(); // Initialize useNavigate
+  const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
     name: "",
-    password: "", // Added password field
+    password: "",
     matricNo: "",
     socialHandler: "",
     phoneNo: "",
@@ -19,7 +19,7 @@ const SignupForm = () => {
     bestFriend: "",
     bestMoment: "",
     miss: "",
-    profilePicture: null, // Store the selected file
+    profilePicture: null,
   });
 
   const handleChange = (e) => {
@@ -39,20 +39,33 @@ const SignupForm = () => {
 
     // Check if any field is empty
     for (const key in formData) {
-      if (!formData[key]) {
+      if (key !== "profilePicture" && !formData[key]) {
         alert(`Please fill in the ${key} field.`);
         return;
       }
     }
 
     try {
-      const response = await axios.post(apiEndpoints.signup, formData);
-      console.log("Signup successful:", response.data);
+      const data = new FormData();
+      
+      // Append all form fields
+      Object.keys(formData).forEach(key => {
+        if (formData[key] !== null) {
+          data.append(key, formData[key]);
+        }
+      });
 
-      // Navigate to the login page after successful signup
-      navigate("/login"); // Use navigate to redirect
+      const response = await axios.post(apiEndpoints.signup, data, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      });
+      
+      console.log("Signup successful:", response.data);
+      navigate("/login");
     } catch (error) {
       console.error("Signup error:", error.response ? error.response.data : error.message);
+      alert("Signup failed. Please try again.");
     }
   };
 
@@ -61,6 +74,7 @@ const SignupForm = () => {
       <div className="form-box">
         <h2>Create an Account</h2>
         <form onSubmit={handleSubmit}>
+          {/* Your form inputs remain the same */}
           <input type="text" name="name" placeholder="Name" value={formData.name} onChange={handleChange} />
           <input type="password" name="password" placeholder="Password" value={formData.password} onChange={handleChange} />
           <input type="text" name="matricNo" placeholder="Matric Number" value={formData.matricNo} onChange={handleChange} />

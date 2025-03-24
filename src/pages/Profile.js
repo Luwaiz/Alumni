@@ -4,47 +4,40 @@ import "./profile.css";
 import apiEndpoints from "../components/API";
 
 const Profile = () => {
-  const [user, setUser] = useState(null); // State to store user data
-  const [loading, setLoading] = useState(true); // State to handle loading
-  const [error, setError] = useState(null); // State to handle errors
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  // Retrieve matricNo from localStorage
   const matricNo = localStorage.getItem("matricNo");
-  // Fetch user profile data
+
   useEffect(() => {
-    
     const fetchUserProfile = async () => {
       try {
         const response = await axios.get(`${apiEndpoints.profile}/${matricNo}`, {
           headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`, // Include the token for authentication
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
         });
-        console.log("wease",response.data)
-        setUser(response.data); // Set the user data
-        setLoading(false); // Set loading to false
+        setUser(response.data);
+        setLoading(false);
       } catch (error) {
         console.error("Error fetching user profile:", error.response);
-        setError("Failed to fetch user profile. Please try again."); // Set error message
-        setLoading(false); // Set loading to false
+        setError("Failed to fetch user profile. Please try again.");
+        setLoading(false);
       }
     };
 
     fetchUserProfile();
   }, [matricNo]);
 
-
-  // Display loading state
   if (loading) {
     return <div className="container">Loading...</div>;
   }
 
-  // Display error state
   if (error) {
     return <div className="container">{error}</div>;
   }
 
-  // Display user profile data
   return (
     <div className="container">
       <div className="heading">
@@ -54,8 +47,16 @@ const Profile = () => {
       <div className="all">
         <div className="input-container">
           <div className="input-main">
-            Best-Friend
-            {/* Main Input (if needed, otherwise remove) */}
+            {user.profilePicture && (
+              <img 
+                src={`https://alumni-backend-6fcj.onrender.com${user.profilePicture}`} 
+                alt="Profile" 
+                className="profile-image"
+                onError={(e) => {
+                  e.target.src = "https://via.placeholder.com/150"; // Fallback image
+                }}
+              />
+            )}
           </div>
 
           <div className="input-group1">

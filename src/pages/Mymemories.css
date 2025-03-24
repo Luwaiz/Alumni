@@ -1,67 +1,90 @@
-/* .container {
+
+.cont{
+    margin-top: 22%;
+}
+.feed-container {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 }
 
-.icon1{
-    position: relative;
-    top: 10px;
-    left: -500px;
-}
-
-.con2{
-    border: solid 1px black;
-    width: 600px;
-    margin-top: -30px;
-    height: 550px;
-    background-color: #DEC29B;
-}
-
-.icon2{
-    margin-left: -490px;
-    margin-top: 15px;
-}
-
-.con2 p{
-    margin-top: -30px;
-    margin-left: -210px;
-    font-weight: bolder;
-    color: #692800;
-}
-
-.con3{
-    border: 1px solid black;
-    height: 400px;
-    margin-top: 25px;
-}
-
-.icon3{
-    margin-top: 20px;
-    margin-left: -500px;
-    margin-bottom: auto;
-} */
-
+/* Center the post cards */
 .post-card {
     border: 1px solid #ccc;
     border-radius: 10px;
-    padding: 20px;
     margin-bottom: 20px;
-    background-color: #f9f9f9;
-  }
-  
-  .post-card img {
-    border-radius: 10px;
-  }
-  
-  .post-card button {
+    background-color: #F4DCBB;
+    width: 90%; /* Adjust width */
+    max-width: 500px; /* Limit max width */
+    text-align: center; /* Center text */
+    margin-left: 400px;
+    padding-top: 10px; 
+    padding-bottom: 20px;
+}
+
+/* Ensure images don't exceed container */
+.post-card img {
+    width: 100%;
+    max-width: 500px;
+}
+
+/* Style like button */
+.post-card button {
     background-color: #692800;
     color: white;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
-  }
-  
-  .post-card button:hover {
+    margin-top: 10px;
+}
+
+.post-card button:hover {
     background-color: #4d1e00;
-  }
+}
+
+/* Floating Plus Button */
+.floating-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #692800;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.floating-button:hover {
+    background-color: #4d1e00;
+}
+.username{
+    font-weight: bold;
+    color: #692800;
+    align-self: flex-start;
+    margin-right: 100%;
+    padding-left: 10px;
+}
+.bottom {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 12px;
+    color: #692800;
+    display: flex;
+    padding-left: 10px;
+}
+.head{
+    align-self: center;
+    display: flex;
+    font-size: 30px;
+    text-align: center;
+    margin-left: 43%;
+}
