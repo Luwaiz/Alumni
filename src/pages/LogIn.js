@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom"; // Import useNavigate for redirection
+import { useLocation, useNavigate } from "react-router-dom"; // Import useNavigate for redirection
 import "./Login.css";
 import apiEndpoints from "../components/API";
 
@@ -22,6 +22,7 @@ const LogIn = () => {
 		});
 	};
 
+	const location = useLocation();
 	// Handle form submission
 	const handleSubmit = async (e) => {
 		e.preventDefault();
@@ -50,7 +51,8 @@ const LogIn = () => {
 			}
 
 			// Redirect to the home page or another protected route
-			navigate("/"); // Example: Redirect to home page
+			const from = location.state?.from?.pathname || "/my-profile";
+			navigate(from, { replace: true });
 		} catch (error) {
 			console.error(
 				"Login error:",
@@ -76,7 +78,7 @@ const LogIn = () => {
 					<input
 						type="password"
 						name="password"
-						placeholder="*************"
+						placeholder="*"
 						value={formData.password}
 						onChange={handleChange}
 					/>
@@ -97,6 +99,7 @@ const LogIn = () => {
 			</div>
 		</div>
 	);
+
 };
 
 export default LogIn;
