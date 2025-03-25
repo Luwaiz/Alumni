@@ -54,9 +54,6 @@ const Feed = () => {
 
 	return (
 		<div className="cont">
-			<div className="heading">
-				<h1>My Profile</h1>
-			</div>
 			{posts.map((post) => (
 				<div key={post._id} className="post-card">
 					<p className="username">{post.ownerName}</p>

@@ -40,8 +40,8 @@ const Profile = () => {
 
   return (
     <div className="container">
-      <div className="heading">
-        <h1>My Profile</h1>
+      <div>
+        <p className="pro">My Profile</p>
       </div>
 
       <div className="all">

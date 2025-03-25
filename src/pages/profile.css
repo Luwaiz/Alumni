@@ -1,23 +1,18 @@
-General Styles
 .container {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	font-style: normal;
 }
 
-.heading {
-	text-align: center;
-	margin-top: 30px;
+.pro {
+    margin-top: -270px;
+    font-size: 48px; /* Adjusted to a readable size */
+    font-weight: bold; /* Ensures text is bold */
+    font-style: normal; /* Removes italic effect */
+    text-align: center;
+    color: #692800; /* Keeps color consistent */
 }
-
-.heading h1 {
-	font-size: 30px;
-	font-weight: 600;
-	margin-top: -290px;
-	margin-right: 50px;
-	align-self: center;
-}
-
 /* Profile Section */
 .all {
 	background-color: #dec29b;
@@ -29,6 +24,7 @@ General Styles
 	height: 450px;
 	position: absolute;
 	margin-top: 120px;
+	font-style: normal;
 }
 
 /* Input Container */
