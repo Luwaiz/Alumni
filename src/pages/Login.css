@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
     min-height: 100vh;
     padding: 20px;
     text-align: center;
@@ -40,10 +40,10 @@
     display: flex;
     justify-content: center;
     gap: 15px;
-    margin-top: 10px;
     position: absolute;
-    margin-left: -300px;
     margin-top: 170px;
+    align-items: center;
+    margin-left: -130px;
 }
 
 button {
@@ -107,6 +107,7 @@ button {
     .button-group {
         flex-direction: column;
         gap: 10px;
+        margin-left: 100px;
     }
 
     button {

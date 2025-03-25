@@ -1,171 +1,175 @@
 /* General Styles */
 .containerr {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 20px;
 }
 
-.heading {
-  text-align: center;
-  margin-bottom: 30px;
+.headingg{
+	text-align: center;
 }
 
-.heading h1 {
-  font-size: 30px;
+.headerText{
+    font-size: 20px;
   font-weight: 600;
-  color: #692800;
+}
+
+.headingg h1 {
+	font-size: 30px;
+	font-weight: 600;
+	margin-right: 50px;
+	align-self: center;
 }
 
 .alll {
-  background-color: #DEC29B;
-  width: 80%;
-  max-width: 800px;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+	background-color: #dec29b;
+	width: 80%;
+	max-width: 800px;
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* Alumni Grid Layout */
 .alumni-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-  width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
+	width: 100%;
 }
 
 /* Alumni Card */
 .alumnus-card {
-  background-color: #F4DCBB;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+	background-color: #f4dcbb;
+	border-radius: 10px;
+	padding: 20px;
+	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+	transition: transform 0.3s ease;
 }
 
 .alumnus-card:hover {
-  transform: translateY(-5px);
+	transform: translateY(-5px);
 }
 
 .card-content {
-  display: flex;
-  gap: 20px;
+	display: flex;
+	gap: 20px;
 }
 
 .profile-image-container {
-  width: 200px;
-  min-width: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
+	width: 200px;
+	min-width: 200px;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
 }
 
 .profile-imagee {
-  width: 150px;
-  height: 100px;
-  object-fit: cover;
-
+	width: 150px;
+	height: 100px;
+	object-fit: cover;
 }
 .alumnus-info {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
+	flex: 1;
+	display: flex;
+	flex-direction: column;
 }
 /* NZNNZNZ */
 .alumnus-name {
-  font-size: 22px;
-  color: #692800;
-  margin: 0 0 5px 0;
-  text-align: left;
+	font-size: 22px;
+	color: #692800;
+	margin: 0 0 5px 0;
+	text-align: left;
 }
 
 .alumnus-matric {
-  font-size: 16px;
-  color: #692800;
-  opacity: 0.8;
-  margin: 0 0 15px 0;
-  text-align: left;
+	font-size: 16px;
+	color: #692800;
+	opacity: 0.8;
+	margin: 0 0 15px 0;
+	text-align: left;
 }
 
 .details-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin-bottom: 20px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 12px;
+	margin-bottom: 20px;
 }
 
 .detail-item {
-  display: flex;
-  flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 
 .detail-label {
-  font-weight: 600;
-  color: #692800;
-  font-size: 14px;
+	font-weight: 600;
+	color: #692800;
+	font-size: 14px;
 }
 
 .detail-value {
-  color: #692800;
-  font-size: 15px;
-  word-break: break-word;
+	color: #692800;
+	font-size: 15px;
+	word-break: break-word;
 }
 
 .view-profile-btn {
-  display: block;
-  text-align: center;
-  background-color: #692800;
-  color: white;
-  padding: 10px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: 500;
-  margin-top: auto;
-  transition: background-color 0.3s;
-  width: 200px;
+	display: block;
+	text-align: center;
+	background-color: #692800;
+	color: white;
+	padding: 10px;
+	border-radius: 5px;
+	text-decoration: none;
+	font-weight: 500;
+	margin-top: auto;
+	transition: background-color 0.3s;
+	width: 200px;
 }
 
 .view-profile-btn:hover {
-  background-color: #5a2200;
+	background-color: #5a2200;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .card-content {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .profile-image-container {
-    width: 100%;
-    margin-bottom: 15px;
-  }
-  
-  .alumnus-name,
-  .alumnus-matric {
-    text-align: center;
-  }
-  
-  .details-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .view-profile-btn {
-    width: 100%;
-  }
+	.card-content {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.profile-image-container {
+		width: 100%;
+		margin-bottom: 15px;
+	}
+
+	.alumnus-name,
+	.alumnus-matric {
+		text-align: center;
+	}
+
+	.details-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.view-profile-btn {
+		width: 100%;
+	}
 }
 
 @media (max-width: 480px) {
-  .heading h1 {
-    font-size: 24px;
-  }
-  
-  .alll {
-    padding: 15px;
-  }
-  
-  .profile-imagee {
-    width: 120px;
-    height: 100px;
-  }
+	.heading h1 {
+		font-size: 24px;
+	}
+
+	.alll {
+		padding: 15px;
+	}
+
+	.profile-imagee {
+		width: 120px;
+		height: 100px;
+	}
 }
