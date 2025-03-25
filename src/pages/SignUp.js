@@ -70,7 +70,7 @@ const SignupForm = () => {
   };
 
   return (
-    <div className="container">
+    <div className="contai">
       <div className="form-box">
         <h2>Create an Account</h2>
         <form onSubmit={handleSubmit}>
